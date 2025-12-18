@@ -65,8 +65,7 @@ components:
 tags:
   - name: Check-in Process
     description: Základní operace s kufry na Alpha Serveru
-  - name: Internal Communication
-    description: Webhooky a komunikace mezi servery
+
 
 paths:
   /bag:
@@ -149,26 +148,3 @@ paths:
       responses:
         '200':
           description: Vyzvednutí potvrzeno
-
-  /webhook-receiver:
-    post:
-      summary: Příjem událostí (Běží na Beta Serveru)
-      description: Interní endpoint, kam Alpha posílá notifikace o změně stavu.
-      servers:
-        - url: http://localhost:8080
-      tags:
-        - Internal Communication
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                event:
-                  type: string
-                  example: "bag_loaded"
-                data:
-                  $ref: '#/components/schemas/Bag'
-      responses:
-        '200':
-          description: Webhook přijat a zpracován

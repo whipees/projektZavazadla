@@ -107,7 +107,7 @@
             const btn = el.querySelector('button');
             if(btn) btn.remove(); 
 
-            fetch('/bag/collected', {
+            fetch('http://localhost:3000/bag/collected', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ bagId: id })

@@ -39,22 +39,21 @@ Content-Type: application/json
 
 @alphaUrl = http://localhost:3000
 
-### 1. Check-in (Vytvoření)
+### 1. Check-in
 # @name createBag
 POST {{alphaUrl}}/bag
 Content-Type: application/json
 
-{ "owner": "Janad Rddychlá", "flight": "OK123", "weight": 12 }
+{ "owner": "Janad Rddychlá", "flight": "", "weight": null }
 
-### 2. Naložení do letadla (Nový krok!)
-# Teď se kufr objeví v horním modrém kontejneru "Letadla na cestě"
+### 2
 PATCH {{alphaUrl}}/bag/{{createBag.response.body.id}}/status
 Content-Type: application/json
 
 { "status": "LOADED" }
 
-### 3. Vyložení na pás
-# Kufr zmizí z letadla, skočí na Pás 1 a začne odpočet
+### 3.
+
 PATCH {{alphaUrl}}/bag/{{createBag.response.body.id}}/status
 Content-Type: application/json
 

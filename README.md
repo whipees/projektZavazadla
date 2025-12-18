@@ -1,4 +1,4 @@
-# ✈️ Airport Baggage Handling System (Alpha & Beta Integration)
+# ✈️ Airport Baggage Handling System
 
 
 ## 📋 Přehled architektury

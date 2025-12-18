@@ -45,6 +45,8 @@ app.post('/webhook-receiver', (req, res) => {
     res.sendStatus(200); 
 });
 
+
+
 server.listen(8080, '0.0.0.0', () => {
   console.log('BETA (Display) běží na http://localhost:8080');
 });
